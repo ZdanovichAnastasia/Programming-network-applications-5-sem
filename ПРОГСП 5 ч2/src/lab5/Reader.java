@@ -166,27 +166,15 @@ public class Reader extends JFrame {
                         fl6.setVisible(true);
                     }
                     if (boxA == null) {
-                        //fl6.setVisible(false);
-                        //fl2.setVisible(false);
-                        //fl1.setVisible(false);
                         fl3.setVisible(true);
                     }
                     if (boxB == null) {
-                        //fl6.setVisible(false);
-                        //fl2.setVisible(false);
-                        //fl1.setVisible(false);
-                        //fl3.setVisible(false);
                         fl4.setVisible(true);
                     }
                     if (boxC == null) {
-                        //fl6.setVisible(false);
-                        //fl2.setVisible(false);
-                        //fl1.setVisible(false);
-                        //fl3.setVisible(false);
-                        //fl4.setVisible(false);
-                        fl5.setVisible(true);
+                       fl5.setVisible(true);
                     } else {
-                        // load.setEnabled(true);
+                      
                         fl1.setVisible(false);
                         fl2.setVisible(false);
                         fl3.setVisible(false);
