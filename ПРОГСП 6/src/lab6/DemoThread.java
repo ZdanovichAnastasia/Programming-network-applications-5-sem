@@ -9,7 +9,6 @@ import javax.imageio.ImageIO;
 import javax.swing.*;
 
 public class DemoThread extends JFrame{
-    //private BufferedImage buffImg1, buffImg2;
     private int topWidth = 350, topHeight = 200, topBankY = 45, topBankX=90,
             bottomWidth = 350,bottomHeight = 0, bottomBankY = 477, bottomBankX=90,
             snowflakeX = 252, snowflakeY = 200,
@@ -29,12 +28,11 @@ public class DemoThread extends JFrame{
         setSize(1000, 600);
         setLocationRelativeTo(null);
         setResizable(false);
-// Background() -панель, для которой переопределен paintComponent с фоном
 
 
         bt = new JButton("Старт");
-        setContentPane(new Background()); // панель устанавливается как contentPane в наследнике JFrame
-        Container content = getContentPane(); //теперь все элементы интерфейса будут на этой панели.
+        setContentPane(new Background()); 
+        Container content = getContentPane(); 
         bt.setPreferredSize(new Dimension(100,70));
         bt.setBackground(Color.white);
         bt.setForeground(Color.BLACK);
@@ -46,15 +44,13 @@ public class DemoThread extends JFrame{
                 sandMove.start();
                 Thread sandMove1 = new Thread(new SandThread());
                 sandMove1.start();
-                //Thread endMove1 = new Thread(new EndThread());
-                //endMove1.start();
             }
         }
         );
         content.add(bt);
         content.add(new Sandbank());
     }
-    private static class Background extends JPanel{ // отрисовка нового фона
+    private static class Background extends JPanel{ 
         @Override
         protected void paintComponent(Graphics g){
             super.paintComponent(g);
@@ -139,17 +135,6 @@ public class DemoThread extends JFrame{
     }
     public class SandThread implements Runnable{
 
-        /*protected void paintComponent(Graphics g) {
-            super.paintComponent(g);
-            Graphics2D graphics2D = (Graphics2D)g;
-            graphics2D.drawImage(sand,snowflakeX ,snowflakeY, width1, height1, this);
-            graphics2D.drawImage(sand, snowflakeX1,snowflakeY1, width2, height1, this);
-            graphics2D.drawImage(sand, snowflakeX2,snowflakeY2, width3, height2, this);
-            graphics2D.drawImage(sand, snowflakeX3,snowflakeY3, width2, height2, this);
-            graphics2D.drawImage(sand, snowflakeX4,snowflakeY4, width2, height3, this);
-            graphics2D.drawImage(sand, snowflakeX5,snowflakeY5, width2, height3, this);
-            graphics2D.drawImage(sand, snowflakeX6,snowflakeY6, width2, height3, this);
-        }*/
         @Override
         public void run() {
             while (topHeight > 10) {
@@ -173,7 +158,6 @@ public class DemoThread extends JFrame{
                width1=0;
                width2=0;
                width3=0;
-                //topHeight -= 20;
                 try {
                     Thread.sleep(20);
                 }
@@ -192,7 +176,7 @@ public class DemoThread extends JFrame{
                 snowflakeY4 = 0;
                 snowflakeY5 = 0;
                 snowflakeY6 = 0;
-                //topHeight -= 2;
+              
                 try {
                     Thread.sleep(10);
                 }
